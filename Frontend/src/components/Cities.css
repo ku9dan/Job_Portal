@@ -63,7 +63,8 @@
 }
 
 .city-card p {
-    color: #888;
+    color: #25d17e;
+    font-weight:bold;
     font-size: 14px;
 }
 
@@ -98,6 +99,7 @@
     border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-weight:bold;
 }
 
 .view-all-btn:hover,
