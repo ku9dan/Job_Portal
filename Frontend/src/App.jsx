@@ -1,6 +1,8 @@
 import React from "react";
 import Cities from "./components/Cities";
 import HiringSteps from "./components/HiringSteps";
+import { JobsPage } from "./components/JobsPage";
+
 
 function App() {
   return (
@@ -11,6 +13,10 @@ function App() {
       <div className="hiring-steps">
         <HiringSteps />
       </div>
+      <div className="Jobpage">
+        <JobsPage />
+      </div>
+      
     </div>
   );
 }
