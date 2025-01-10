@@ -1,22 +1,22 @@
-.cities-container {
+.citiesContainer {
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
 }
 
-.cities-container h2 {
+.citiesHeader {
     margin-bottom: 20px;
     font-size: 24px;
 }
 
-.carousel-wrapper {
+.carouselWrapper {
     display: flex;
     align-items: center; 
     justify-content: center; 
     gap: 20px;
 }
 
-.cities-list {
+.citiesList {
     display: flex;
     gap: 20px;
     overflow: hidden;
@@ -28,7 +28,7 @@
     transition: all 0.3s ease;
 }
 
-.cities-list.all-cities-grid {
+.allCitiesGrid {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -36,7 +36,7 @@
     overflow: visible; 
 }
 
-.city-card {
+.cityCard {
     width: 180px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -46,25 +46,25 @@
     transition: transform 0.3s;
 }
 
-.city-card:hover {
+.cityCard:hover {
     transform: scale(1.05);
 }
 
-.city-image {
+.cityImage {
     width: 100%;
     height: 120px;
     border-radius: 8px;
     object-fit: cover;
 }
 
-.city-card h3 {
+.cityName {
     margin: 10px 0;
     font-size: 18px;
 }
 
-.city-card p {
+.cityJobs {
     color: #25d17e;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 14px;
 }
 
@@ -88,8 +88,8 @@
     color: #1eab67;
 }
 
-.view-all-btn,
-.show-less-btn {
+.viewAllBtn,
+.showLessBtn {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
@@ -99,11 +99,11 @@
     border-radius: 100px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-.view-all-btn:hover,
-.show-less-btn:hover {
+.viewAllBtn:hover,
+.showLessBtn:hover {
     background-color: #1eab67;
     color: #fff;
 }

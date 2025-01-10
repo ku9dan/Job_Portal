@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Cities.css";
+import styles from "./Cities.module.css";
 
 const Cities = () => {
   const cities = [
@@ -17,9 +17,9 @@ const Cities = () => {
     { name: "Pune", jobs: "10K+ Jobs", image: "pune.avif" },
   ];
 
-  const [startIndex, setStartIndex] = useState(0); // Starting index for carousel
-  const [isFullView, setIsFullView] = useState(false); // State for "View All" mode
-  const itemsToShow = 5; // Number of city cards to show in the carousel view
+  const [startIndex, setStartIndex] = useState(0);
+  const [isFullView, setIsFullView] = useState(false);
+  const itemsToShow = 5;
 
   const handleNext = () => {
     setStartIndex((prevIndex) =>
@@ -32,51 +32,52 @@ const Cities = () => {
   };
 
   const handleViewAll = () => {
-    setIsFullView(true); // Switch to grid view
+    setIsFullView(true);
   };
 
   const handleShowLess = () => {
-    setIsFullView(false); // Return to carousel view
-    setStartIndex(0); // Reset carousel to the start
+    setIsFullView(false);
+    setStartIndex(0);
   };
 
   return (
-    <div className="cities-container">
+    <div className={styles.citiesContainer}>
       <h2>Explore jobs in 400+ cities</h2>
-      <div className="carousel-wrapper">
-        {/* Left Arrow */}
+      <div className={styles.carouselWrapper}>
         {!isFullView && startIndex > 0 && (
-          <button className="arrow left-arrow" onClick={handlePrevious}>
+          <button
+            className={`${styles.arrow} ${styles.leftArrow}`}
+            onClick={handlePrevious}
+          >
             &#8249;
           </button>
         )}
 
-        {/* Cities List */}
         <div
-          className={`cities-list ${
-            isFullView ? "all-cities-grid" : "carousel-container"
+          className={`${styles.citiesList} ${
+            isFullView ? styles.allCitiesGrid : styles.carouselContainer
           }`}
         >
           {!isFullView
             ? cities
                 .slice(startIndex, startIndex + itemsToShow)
                 .map((city, index) => (
-                  <div className="city-card" key={index}>
+                  <div className={styles.cityCard} key={index}>
                     <img
                       src={city.image}
                       alt={city.name}
-                      className="city-image"
+                      className={styles.cityImage}
                     />
                     <h3>{city.name}</h3>
                     <p>{city.jobs}</p>
                   </div>
                 ))
             : cities.map((city, index) => (
-                <div className="city-card" key={index}>
+                <div className={styles.cityCard} key={index}>
                   <img
                     src={city.image}
                     alt={city.name}
-                    className="city-image"
+                    className={styles.cityImage}
                   />
                   <h3>{city.name}</h3>
                   <p>{city.jobs}</p>
@@ -84,21 +85,22 @@ const Cities = () => {
               ))}
         </div>
 
-        {/* Right Arrow */}
         {!isFullView && startIndex + itemsToShow < cities.length && (
-          <button className="arrow right-arrow" onClick={handleNext}>
+          <button
+            className={`${styles.arrow} ${styles.rightArrow}`}
+            onClick={handleNext}
+          >
             &#8250;
           </button>
         )}
       </div>
 
-      {/* View All/Show Less Button */}
       {!isFullView ? (
-        <button className="view-all-btn" onClick={handleViewAll}>
+        <button className={styles.viewAllBtn} onClick={handleViewAll}>
           View all cities
         </button>
       ) : (
-        <button className="show-less-btn" onClick={handleShowLess}>
+        <button className={styles.showLessBtn} onClick={handleShowLess}>
           Show less
         </button>
       )}
