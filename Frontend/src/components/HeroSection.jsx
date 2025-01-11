@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import styles from "./HeroSection.module.css";
 import Navbar from "./Navbar";
 
@@ -10,29 +10,34 @@ const HeroSection = () => {
       <div className={styles.navbar}>
         <Navbar />
       </div>
-      <h2 className={styles.title}>
-        Modernizing the_Job
+      <h1 className={styles.mainTitle}>
+        <span className={styles.orangeOutline}>One Step Closer</span>
         <br />
-        Search Experience
-      </h2>
+        <span className={styles.blackText}>Get your Dream Job</span>
+      </h1>
+      <p className={styles.description}>
+        Find You New Job Today! New Job Postings Everyday just for you, browse
+        the job you want and apply wherever you want.
+      </p>
       <div className={styles.searchBar}>
-        <input
-          type="text"
-          className={styles.searchInput}
-          placeholder="Search Your Needs"
-        />
-        <select className={styles.searchSelect}>
-          <option>Web Development</option>
-          <option>Design</option>
-          <option>Software Engineer</option>
-        </select>
-        <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
-      </div>
-      <div className={styles.popularJobs}>
-        <span>Popular Jobs:</span>
-        <button className={styles.jobTag}>Designer</button>
-        <button className={styles.jobTag}>Web Developer</button>
-        <button className={styles.jobTag}>Software Engineer</button>
+        <div className={styles.inputGroup}>
+          <FontAwesomeIcon icon={faSearch} className={styles.icon} />
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Job title or keyword"
+          />
+        </div>
+        <div className={styles.divider}></div>
+        <div className={styles.inputGroup}>
+          <FontAwesomeIcon icon={faMapMarkerAlt} className={styles.icon} />
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Location (e.g., Bandung, Indonesia)"
+          />
+        </div>
+        <button className={styles.searchButton}>Search</button>
       </div>
     </div>
   );
