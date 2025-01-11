@@ -1,0 +1,79 @@
+.heroContent {
+    text-align: center;
+    padding:0px 20px 20px 20px;
+    background-image: linear-gradient(to bottom,rgb(180, 202, 247), rgb(208, 223, 252), rgb(180, 202, 247));
+  }
+  
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:black;
+  }
+  
+  
+  .searchBar {
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 50%;
+  margin: 0 auto 20px;
+  background-color: #f9f9f9;
+  }
+  
+  .searchInput {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: inherit;
+  }
+  
+  .searchSelect {
+    padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  }
+  
+  .searchIcon{
+    padding: 8px 8px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width:20px;
+  height:20px;
+  background-color: rgb(255, 37, 37);
+  }
+
+  .searchButton:hover {
+    background-color: #5d2fcc;
+  }
+  
+  .popularJobs {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .jobTag {
+    background-color: inherit;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .jobTag:hover {
+    background-color: black;
+    color: #f9f9f9;
+    border-radius: 20px;
+  }
+  
+  
