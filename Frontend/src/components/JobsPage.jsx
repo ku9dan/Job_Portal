@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Briefcase, GraduationCap, Brain, ChevronLeft, ChevronRight } from 'lucide-react';
 import { JobCard } from './JobCard';
 import styles from './JobsPage.module.css';
@@ -88,12 +88,6 @@ const jobsData = [
 ];
 
 export const JobsPage = () => {
-  const [showAll, setShowAll] = useState(false);
-
-  const handleShowAll = () => {
-    setShowAll(!showAll);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -118,15 +112,11 @@ export const JobsPage = () => {
         </button>
       </div>
 
-      <div className={`${styles.grid} ${showAll ? styles.showAll : ''}`}>
+      <div className={styles.grid}>
         {jobsData.map((job, index) => (
           <JobCard key={index} {...job} />
         ))}
       </div>
-
-      <button className={styles.showAllButton} onClick={handleShowAll}>
-        {showAll ? 'Show Less' : 'Show All'}
-      </button>
 
       <div className={styles.navigation}>
         <button className={styles.navButton}>

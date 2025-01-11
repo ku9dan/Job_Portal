@@ -94,60 +94,59 @@
   background-color: #0056b3;
 }
 
-
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* Reduce to 3 columns on smaller screens */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 992px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns on medium screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .tabs {
-    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+    flex-wrap: wrap;
   }
 
   .tab {
-    flex: 1 1 45%; /* Make tabs take up less space */
+    flex: 1 1 45%;
   }
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(1, 1fr); /* Reduce to 1 column on small screens */
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .tab {
-    flex: 1 1 100%; /* Make tabs full width on small screens */
+    flex: 1 1 100%;
   }
 
   .title {
-    font-size: 1.5rem; /* Reduce title size for smaller screens */
+    font-size: 1.5rem;
   }
 
   .subtitle {
-    font-size: 0.875rem; /* Reduce subtitle size for smaller screens */
+    font-size: 0.875rem;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 10px; /* Reduce padding for very small screens */
+    padding: 10px;
   }
 
   .tabs {
-    gap: 10px; /* Reduce gap between tabs */
+    gap: 10px;
   }
 
   .tab {
-    padding: 8px 16px; /* Reduce padding for tabs */
+    padding: 8px 16px;
   }
 
   .showAllButton {
-    padding: 8px 16px; /* Reduce padding for the "Show All" button */
+    padding: 8px 16px;
   }
 }
