@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
 import React from "react";
-import { Eye, Clock, Users, ArrowUpRight } from "lucide-react";
-import styles from "../styles/JobCard.module.css";
->>>>>>> 44f768755ba6faec4d515f1cfd3784d6da912fca
 
 function JobCard({
   company,
@@ -18,7 +12,6 @@ function JobCard({
   companyLogo,
 }) {
   return (
-<<<<<<< HEAD
     <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
       <div className="flex items-start gap-2">
         {/* Logo Container */}
@@ -38,34 +31,6 @@ function JobCard({
                 d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
-=======
-    <div className={`${styles.card} ${styles[type]}`}>
-      <div className={styles.cardHeader}>
-        <img src={logoUrl} alt={company} className={styles.logo} />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.badges}>
-          <span className={styles.badge}>{location}</span>
-          <span className={styles.badge}>{workType}</span>
-        </div>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.company}>{company}</p>
-        <div className={styles.stats}>
-          <div className={styles.stat}>
-            <Eye size={16} />
-            {views.toLocaleString()} Views
-          </div>
-          {applied ? (
-            <div className={styles.stat}>
-              <Users size={16} />
-              {applied} Applied
-            </div>
-          ) : (
-            <div className={styles.stat}>
-              <Clock size={16} />
-              {daysLeft} days left
-            </div>
->>>>>>> 44f768755ba6faec4d515f1cfd3784d6da912fca
           )}
         </div>
 
@@ -99,10 +64,6 @@ function JobCard({
       </div>
     </div>
   );
-<<<<<<< HEAD
 }
 
 export default JobCard;
-=======
-};
->>>>>>> 44f768755ba6faec4d515f1cfd3784d6da912fca
