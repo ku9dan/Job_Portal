@@ -8,6 +8,8 @@ import JobCardPage from "./components/JobCardPage";
 import Rating from "./components/Rating";
 import FAQPage from "./components/FAQPage";
 import Footer from "./components/Footer";
+import FeaturedCompanies from "./components/FeaturedCompanies";
+// import QualificationPopup from "./components/QualificationPopup";
 
 // >>>>>>> 5202aa8e92e7789bc0d53c732e5f2fa68c77ddde
 
@@ -26,6 +28,9 @@ function App() {
       <div className={styles.cities}>
         <Cities />
       </div>
+      <div className={styles.featuredcompanies}>
+        <FeaturedCompanies />
+      </div>
       <div className={styles.hiringSteps}>
         <HiringSteps />
       </div>
@@ -37,6 +42,12 @@ function App() {
       </div>
       <div className={styles.footer}>
         <Footer />
+      </div>
+      {/* <div>
+        <QualificationPopup />
+      </div> */}
+      <div>
+        <FeaturedCompanies />
       </div>
     </div>
   );
