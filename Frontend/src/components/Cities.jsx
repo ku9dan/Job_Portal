@@ -1,3 +1,81 @@
+// import React, { useState } from "react";
+// import styles from "../styles/Cities.module.css";
+
+// const Cities = () => {
+//   const cities = [
+//     { name: "Mumbai", jobs: "10k jobs", image: "Mumbai.jpg" },
+//     { name: "Bangalore", jobs: "10k jobs", image: "Bangalore.webp" },
+//     { name: "Delhi", jobs: "10k jobs", image: "Delhi.avif" },
+//     { name: "Hyderabad", jobs: "10k jobs", image: "Hyderabad.webp" },
+//     { name: "Chennai", jobs: "10k jobs", image: "Chennai.webp" },
+//     { name: "Ahmedabad", jobs: "10k jobs", image: "Ahmedabad.jpg" },
+//   ];
+
+//   const [startIndex, setStartIndex] = useState(0);
+//   const itemsToShow = 5;
+
+//   const handleNext = () => {
+//     setStartIndex((prevIndex) =>
+//       prevIndex + itemsToShow < cities.length ? prevIndex + 1 : prevIndex
+//     );
+//   };
+
+//   const handlePrevious = () => {
+//     setStartIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+//   };
+
+//   return (
+//     <div className={styles.citiesContainer}>
+//       <h2 className={styles.heading}>
+//         Explore jobs in <span>400+ cities</span>
+//       </h2>
+//       <p className={styles.subHeading}>
+//         Find the jobs/Internship that fits your career aspirations
+//       </p>
+//       <div className={styles.carouselWrapper}>
+//         {startIndex > 0 && (
+//           <button
+//             className={`${styles.arrow} ${styles.leftArrow}`}
+//             onClick={handlePrevious}
+//           >
+//             &#8249;
+//           </button>
+//         )}
+
+//         <div className={styles.citiesList}>
+//           {cities
+//             .slice(startIndex, startIndex + itemsToShow)
+//             .map((city, index) => (
+//               <div className={styles.cityCard} key={index}>
+//                 <div className={styles.cityImageWrapper}>
+//                   <img
+//                     src={city.image}
+//                     alt={city.name}
+//                     className={styles.cityImage}
+//                   />
+//                 </div>
+//                 <h3 className={styles.cityName}>{city.name}</h3>
+//                 <p className={styles.cityJobs}>{city.jobs}</p>
+//               </div>
+//             ))}
+//         </div>
+
+//         {startIndex + itemsToShow < cities.length && (
+//           <button
+//             className={`${styles.arrow} ${styles.rightArrow}`}
+//             onClick={handleNext}
+//           >
+//             &#8250;
+//           </button>
+//         )}
+//       </div>
+//       <button className={styles.viewAllBtn}>View all Cities</button>
+//     </div>
+//   );
+// };
+
+// export default Cities;
+
 import React, { useState } from "react";
 import styles from "../styles/Cities.module.css";
 
@@ -18,8 +96,9 @@ const Cities = () => {
   ];
 
   const [startIndex, setStartIndex] = useState(0);
-  const [isFullView, setIsFullView] = useState(false);
-  const itemsToShow = 5;
+  const [isViewAll, setIsViewAll] = useState(false);
+
+  const itemsToShow = isViewAll ? cities.length : 5;
 
   const handleNext = () => {
     setStartIndex((prevIndex) =>
@@ -31,20 +110,21 @@ const Cities = () => {
     setStartIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
   };
 
-  const handleViewAll = () => {
-    setIsFullView(true);
-  };
-
-  const handleShowLess = () => {
-    setIsFullView(false);
+  const handleViewAllToggle = () => {
+    setIsViewAll((prevState) => !prevState);
     setStartIndex(0);
   };
 
   return (
     <div className={styles.citiesContainer}>
-      <h2>Explore jobs in 400+ cities</h2>
+      <h2 className={styles.heading}>
+        Explore jobs in <span>400+ cities</span>
+      </h2>
+      <p className={styles.subHeading}>
+        Find the jobs/Internship that fits your career aspirations
+      </p>
       <div className={styles.carouselWrapper}>
-        {!isFullView && startIndex > 0 && (
+        {startIndex > 0 && !isViewAll && (
           <button
             className={`${styles.arrow} ${styles.leftArrow}`}
             onClick={handlePrevious}
@@ -52,40 +132,24 @@ const Cities = () => {
             &#8249;
           </button>
         )}
-
-        <div
-          className={`${styles.citiesList} ${
-            isFullView ? styles.allCitiesGrid : styles.carouselContainer
-          }`}
-        >
-          {!isFullView
-            ? cities
-                .slice(startIndex, startIndex + itemsToShow)
-                .map((city, index) => (
-                  <div className={styles.cityCard} key={index}>
-                    <img
-                      src={city.image}
-                      alt={city.name}
-                      className={styles.cityImage}
-                    />
-                    <h3>{city.name}</h3>
-                    <p>{city.jobs}</p>
-                  </div>
-                ))
-            : cities.map((city, index) => (
-                <div className={styles.cityCard} key={index}>
+        <div className={styles.citiesList}>
+          {cities
+            .slice(startIndex, startIndex + itemsToShow)
+            .map((city, index) => (
+              <div className={styles.cityCard} key={index}>
+                <div className={styles.cityImageWrapper}>
                   <img
                     src={city.image}
                     alt={city.name}
                     className={styles.cityImage}
                   />
-                  <h3>{city.name}</h3>
-                  <p>{city.jobs}</p>
                 </div>
-              ))}
+                <h3 className={styles.cityName}>{city.name}</h3>
+                <p className={styles.cityJobs}>{city.jobs}</p>
+              </div>
+            ))}
         </div>
-
-        {!isFullView && startIndex + itemsToShow < cities.length && (
+        {startIndex + itemsToShow < cities.length && !isViewAll && (
           <button
             className={`${styles.arrow} ${styles.rightArrow}`}
             onClick={handleNext}
@@ -94,16 +158,9 @@ const Cities = () => {
           </button>
         )}
       </div>
-
-      {!isFullView ? (
-        <button className={styles.viewAllBtn} onClick={handleViewAll}>
-          View all cities
-        </button>
-      ) : (
-        <button className={styles.showLessBtn} onClick={handleShowLess}>
-          Show less
-        </button>
-      )}
+      <button className={styles.viewAllBtn} onClick={handleViewAllToggle}>
+        {isViewAll ? "Show Less" : "View All Cities"}
+      </button>
     </div>
   );
 };

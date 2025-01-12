@@ -1,0 +1,134 @@
+.footer {
+    background-color: #0b433e; /* teal-900 */
+    color: white;
+    padding: 20px 10px; /* Reduced padding */
+    font-size: 0.9rem;
+  }
+  
+  .gridContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .socialIcon{
+    background-color: #fae7dc;
+    padding:5px 10px;
+    border-radius: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .gridContainer {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .logo {
+    width: 180px; /* Reduced size */
+    margin-top: 10px;
+  }
+  
+  .textContainer {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .sectionHeading {
+    font-size: 1.1rem; 
+    font-weight: 600;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .sectionHeading::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #f97316; 
+    border-radius: 3px;
+  }
+  
+  .linkList {
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .linkItem {
+    font-size: 0.9rem;
+  }
+  
+  .footerBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .footerBottom {
+      flex-direction: row;
+    }
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .socialIcon {
+    font-size: 1.5rem; 
+    color: #f97316; 
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    color: #ea580c;
+  }
+  
+  
+  .emailForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .emailInput {
+    padding: 5px 10px; 
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    width: 200px; 
+  }
+  
+  .emailInput:focus {
+    border: 2px solid #f97316;
+  }
+  
+  .submitButton {
+    background: #f97316;
+    color: white;
+    padding: 5px 15px; 
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background: #ea580c;
+  }
+  

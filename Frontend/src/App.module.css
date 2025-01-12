@@ -33,4 +33,20 @@
     width: 100%;
     padding-bottom: 20px;
   }
+
+  .faqpage{
+    width:100%;
+  }
   
+  .JobsPage {
+    /* margin: 40px 0; */
+    width: 100%;
+  }
+
+  .rating{
+    width:100%;
+  }
+
+  .footer{
+    width: 100%;
+  }
