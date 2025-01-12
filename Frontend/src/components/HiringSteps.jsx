@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HiringSteps.module.css";
+import styles from "../styles/HiringSteps.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -13,48 +13,59 @@ const HiringSteps = () => {
     {
       title: "Create an Account",
       description:
-        "Sign up for the job applicant profile, mention your qualifications, past experiences, and expertise, and scope your interests. Voila! You're all set to find your dream jobs.",
+        "Automate recurring invoices and save time by using pre-built templates. Get paid on time.",
       icon: faUser,
     },
     {
       title: "Search Job",
       description:
-        "Once you set your job hunting parameters, you'll find many openings related to your career interest on the home page and even filter out some of the best job openings.",
+        "Snap and categorize receipts in seconds and link your bank account.",
       icon: faSearch,
     },
     {
       title: "Upload CV/ Resume",
       description:
-        "From numerous job openings, shortlist the right-match vacancy to your profile and apply right after by uploading your CV/Resume and answering a couple of questions, if any.",
+        "Set up payroll and bonuses for all your employees, and never be late on salaries.",
       icon: faFileAlt,
     },
     {
       title: "Get Job",
       description:
-        "After applying, wait for some time, schedule an interview, and if everything goes right, then get hired more quickly than traditional hiring methods.",
+        "Get real-time visibility into every expense and payment, with a neat dashboard.",
       icon: faBriefcase,
     },
   ];
 
   return (
-    <div className={styles.stepsContainer}>
-      <h2 className={styles.stepsTitle}>
-        Get Hired in{" "}
-        <span className={styles.highlight}>4 Quick Easy Steps</span>
-      </h2>
-      <p className={styles.stepsSubtitle}>
-        The quickest and most effective way to get hired by the top firm working
-        in your career interest areas.
-      </p>
-      <div className={styles.stepsWrapper}>
-        {steps.map((step, index) => (
-          <div
-            className={`${styles.stepCard} ${styles[`stepCard${index + 1}`]}`}
-            key={index}
-          >
-            <div
-              className={`${styles.stepIcon} ${styles[`stepIcon${index + 1}`]}`}
-            >
+    <div className={styles.container}>
+      <div className={styles.firstRow}>
+        {/* Title and Sign Up Button */}
+        <div className={styles.titleSection}>
+          <h2 className={styles.headerTitle}>
+            Get Hired in <br />4 Quick Easy Steps
+          </h2>
+          <button className={styles.signUpButton}>
+            Sign Up Now <span className={styles.arrow}>&#8594;</span>
+          </button>
+        </div>
+
+        {/* First Tile */}
+        <div className={styles.firstTile}>
+          <div className={styles.stepCard}>
+            <div className={styles.stepIcon}>
+              <FontAwesomeIcon icon={steps[0].icon} />
+            </div>
+            <h3 className={styles.stepTitle}>{steps[0].title}</h3>
+            <p className={styles.stepDescription}>{steps[0].description}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Remaining Three Tiles */}
+      <div className={styles.secondRow}>
+        {steps.slice(1).map((step, index) => (
+          <div className={styles.stepCard} key={index}>
+            <div className={styles.stepIcon}>
               <FontAwesomeIcon icon={step.icon} />
             </div>
             <h3 className={styles.stepTitle}>{step.title}</h3>

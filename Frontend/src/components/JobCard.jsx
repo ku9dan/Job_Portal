@@ -1,6 +1,6 @@
-import React from 'react';
-import { Eye, Clock, Users, ArrowUpRight } from 'lucide-react';
-import styles from './JobCard.module.css';
+import React from "react";
+import { Eye, Clock, Users, ArrowUpRight } from "lucide-react";
+import styles from "../styles/JobCard.module.css";
 
 export const JobCard = ({
   type,
@@ -16,11 +16,7 @@ export const JobCard = ({
   return (
     <div className={`${styles.card} ${styles[type]}`}>
       <div className={styles.cardHeader}>
-        <img
-          src={logoUrl}
-          alt={company}
-          className={styles.logo}
-        />
+        <img src={logoUrl} alt={company} className={styles.logo} />
       </div>
       <div className={styles.content}>
         <div className={styles.badges}>
