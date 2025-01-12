@@ -46,9 +46,6 @@ function App() {
       {/* <div>
         <QualificationPopup />
       </div> */}
-      <div>
-        <FeaturedCompanies />
-      </div>
     </div>
   );
 }
