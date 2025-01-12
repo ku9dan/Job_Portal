@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import JobCard from './JobCard'; // Import the JobCard component
-
+import JobCard from './JobCard';
 const JobCardPage = () => {
   // Sample job data
   const jobs = [
