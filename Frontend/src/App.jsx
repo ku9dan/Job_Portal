@@ -4,7 +4,8 @@ import HeroSection from "./components/HeroSection";
 import Cities from "./components/Cities";
 import HiringSteps from "./components/HiringSteps";
 import styles from "./App.module.css";
-import JobCardPage from './components/JobCardPage'; 
+import JobCardPage from './components/JobCardPage';
+// import QualificationPopup from "./components/QualificationPopup";
 
 // >>>>>>> 5202aa8e92e7789bc0d53c732e5f2fa68c77ddde
 
@@ -26,6 +27,9 @@ function App() {
       <div>
         <JobCardPage />
       </div>
+      {/* <div>
+        <QualificationPopup />
+      </div> */}
     </div>
   );
 }
