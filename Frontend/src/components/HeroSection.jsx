@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import styles from "./HeroSection.module.css";
+import styles from "../styles/HeroSection.module.css";
 import Navbar from "./Navbar";
 
 const HeroSection = () => {

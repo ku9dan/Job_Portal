@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Cities.module.css";
+import styles from "../styles/Cities.module.css";
 
 const Cities = () => {
   const cities = [
