@@ -165,7 +165,7 @@ const JobCardPage = () => {
   const jobsToDisplay = showAllJobs ? jobs : jobs.slice(0, 4);
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
+    <div className="p-8 bg-gray-50">
       <h1 className="text-3xl font-bold text-gray-900 mb-3">
         Latest Featured Jobs
       </h1>

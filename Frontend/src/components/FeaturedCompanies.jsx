@@ -30,7 +30,7 @@ function FeaturedCompanies() {
   };
 
   return (
-    <div className="bg-white border border-black py-10 px-6 rounded">
+    <div className="bg-white py-10 px-6 rounded">
       <h2 className="text-3xl font-bold text-center mb-6">
         Featured <span className="text-orange-500">Companies</span> hiring now
       </h2>
