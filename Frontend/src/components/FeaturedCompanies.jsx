@@ -44,10 +44,10 @@ function FeaturedCompanies() {
         </button>
         <div className="flex space-x-6 overflow-x-auto">
           {visibleCompanies.map((company, index) => (
-            <div key={index} className="flex flex-col items-center space-y-2 min-w-[150px] border border-orange-400 rounded-xl p-6">
+            <div key={index} className="flex flex-col items-center space-y-2 min-w-[150px] border border-orange-400 rounded-xl p-6 hover:bg-slate-100">
               <img src={company.logo} alt={company.name} className="w-24 h-24 object-contain" />
               <p className="text-lg font-medium">{company.name}</p>
-              <a href="#" className="text-green-500 hover:text-green-700">View Jobs</a>
+              <a href="#" className="text-green-500 border border-black rounded-xl py-1 px-5 hover:bg-black hover:text-green-300">View Jobs</a>
             </div>
           ))}
         </div>

@@ -13,10 +13,10 @@ const JobCard = ({
   companyLogo,
 }) => {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-110 transition-all">
       <div className="flex items-start gap-4">
         {/* Company Logo or Default Icon */}
-        <div className="w-12 h-12 rounded-lg bg-indigo-900 flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
           {companyLogo ? (
             <img src={companyLogo} alt={`${company} logo`} className="w-full h-full rounded-lg object-cover" />
           ) : (
