@@ -1,113 +1,182 @@
-.citiesContainer {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.citiesContainer h2{
-    margin:10px 0;
-}
-
-.citiesHeader {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.carouselWrapper {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    gap: 20px;
-}
-
-.citiesList {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    width: 80%;
-    padding: 10px;
-    flex-wrap: nowrap; 
-    justify-content: center; 
-    margin: 0 auto; 
-    transition: all 0.3s ease;
-}
-
-.allCitiesGrid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    overflow: visible; 
-}
-
-.cityCard {
-    width: 180px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.cityCard:hover {
-    transform: scale(1.05);
-}
-
-.cityImage {
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.cityName {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-.cityJobs {
-    color: #25d17e;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.arrow {
-    background: none;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    font-size: 24px;
-    cursor: pointer;
-    color: #25d17e;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.arrow:hover {
-    color: #1eab67;
-}
-
-.viewAllBtn,
-.showLessBtn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #25d17e;
-    background-color: #fff;
-    border: 2px solid #25d17e;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-}
-
-.viewAllBtn:hover,
-.showLessBtn:hover {
-    background-color: #1eab67;
-    color: #fff;
-}
+    .citiesContainer {
+        text-align: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      
+      .heading {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      
+      .heading span {
+        color: #ff5a1f;
+      }
+      
+      .subHeading {
+        color: #777;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      
+      .carouselWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      .citiesList {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        width: 100%;
+        padding: 10px;
+        justify-content: flex-start;
+        scroll-behavior: smooth;
+      }
+      
+      .citiesList::-webkit-scrollbar {
+        display: none; 
+      }
+      
+      .cityCard {
+        width: 200px;
+        text-align: center;
+        flex-shrink: 0; 
+      }
+      
+      .cityImageWrapper {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        border: 2px solid #ddd;
+      }
+      
+      .cityImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .cityName {
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      
+      .cityJobs {
+        font-size: 14px;
+        color: #25d17e;
+      }
+      
+      .arrow {
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        font-size: 35px;
+        cursor: pointer;
+        color: black;
+        transition: color 0.3s;
+        box-shadow: 0 2px 5px rgb(198, 198, 198);
+        border-radius: 50%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      
+      .viewAllBtn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: black;
+        border: 2px solid black;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      
+      .viewAllBtn:hover {
+        background-color: #cecaca3f;
+      }
+      
+      /* Responsive Styles */
+      
+      /* For small screens (mobile devices) */
+      @media (max-width: 768px) {
+        .heading {
+          font-size: 24px;
+        }
+      
+        .subHeading {
+          font-size: 16px;
+        }
+      
+        .citiesList {
+          gap: 20px;
+        }
+      
+        .cityCard {
+          width: 120px;
+        }
+      
+        .cityImageWrapper {
+          width: 80px;
+          height: 80px;
+        }
+      
+        .cityName {
+          font-size: 14px;
+        }
+      
+        .cityJobs {
+          font-size: 12px;
+        }
+      }
+      
+      /* For tablets */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .heading {
+          font-size: 28px;
+        }
+      
+        .subHeading {
+          font-size: 16px;
+        }
+      
+        .citiesList {
+          gap: 25px;
+        }
+      
+        .cityCard {
+          width: 140px;
+        }
+      
+        .cityImageWrapper {
+          width: 90px;
+          height: 90px;
+        }
+      
+        .cityName {
+          font-size: 15px;
+        }
+      
+        .cityJobs {
+          font-size: 13px;
+        }
+      }
+      
+      /* For larger screens (desktop) */
+      @media (min-width: 1025px) {
+        .citiesList {
+          justify-content: center;
+        }
+      }
+      

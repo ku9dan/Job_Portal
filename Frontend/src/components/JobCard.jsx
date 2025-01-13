@@ -1,5 +1,5 @@
-import React from 'react';
-import { Briefcase } from 'lucide-react';
+import React from "react";
+import { Briefcase } from "lucide-react";
 
 const JobCard = ({
   company,
@@ -18,7 +18,11 @@ const JobCard = ({
         {/* Company Logo or Default Icon */}
         <div className="w-12 h-12 rounded-lg bg-black flex items-center justify-center flex-shrink-0">
           {companyLogo ? (
-            <img src={companyLogo} alt={`${company} logo`} className="w-full h-full rounded-lg object-cover" />
+            <img
+              src={companyLogo}
+              alt={`${company} logo`}
+              className="w-full h-full rounded-lg object-cover"
+            />
           ) : (
             <Briefcase className="w-6 h-6 text-white" />
           )}
