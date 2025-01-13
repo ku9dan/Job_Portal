@@ -1,32 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function FeaturedCompanies() {
   const companies = [
-    { name: 'TCS', logo: 'Tcs.jpg' },
-    { name: 'Infosys', logo: 'infosys.png' },
-    { name: 'Yash Tech.', logo: 'yash.png' },
-    { name: 'Capgemini', logo: 'capgemini.png' },
-    { name: 'Cognizant', logo: 'cognizant.png' },
-    { name: 'Accenture', logo: 'accenture.png' },
-    { name: 'Wipro', logo: 'wipro.png' },
-    { name: 'Tech Mahindra', logo: 'techmahindra.png' },
-    { name: 'Deloitte', logo: 'Deloitte.png' },
+    { name: "TCS", logo: "/Tcs.jpg" },
+    { name: "Infosys", logo: "/infosys.png" },
+    { name: "Yash Tech.", logo: "/yash.png" },
+    { name: "Capgemini", logo: "/capgemini.png" },
+    { name: "Cognizant", logo: "/cognizant.png" },
+    { name: "Accenture", logo: "/accenture.png" },
+    { name: "Wipro", logo: "/wipro.png" },
+    { name: "Tech Mahindra", logo: "/techmahindra.png" },
+    { name: "Deloitte", logo: "/Deloitte.png" },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startIndex, setStartIndex] = useState(0);
+  const [isViewAll, setIsViewAll] = useState(false);
 
-  const visibleCompanies = companies.slice(currentIndex, currentIndex + 4);
+  const itemsToShow = isViewAll ? companies.length : 5;
 
   const handleNext = () => {
-    if (currentIndex + 4 < companies.length) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    setStartIndex((prevIndex) =>
+      prevIndex + itemsToShow < companies.length ? prevIndex + 1 : prevIndex
+    );
   };
 
-  const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+  const handlePrevious = () => {
+    setStartIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+  };
+
+  const handleViewAllToggle = () => {
+    setIsViewAll((prevState) => !prevState);
+    setStartIndex(0);
   };
 
   return (
@@ -34,34 +38,60 @@ function FeaturedCompanies() {
       <h2 className="text-3xl font-bold text-center mb-6">
         Featured <span className="text-orange-500">Companies</span> hiring now
       </h2>
+      <div className="relative flex items-center justify-between">
+        {/* Previous Button */}
+        {startIndex > 0 && !isViewAll && (
+          <button
+            className="absolute left-4 text-3xl p-3 rounded-full bg-gray-200 hover:bg-gray-300 z-10"
+            onClick={handlePrevious}
+          >
+            &#8249;
+          </button>
+        )}
 
-      <div className="flex items-center justify-center space-x-4 mb-6">
-        <button
-          className="text-xl p-2 rounded-full bg-gray-200 hover:bg-gray-300"
-          onClick={handlePrev}
-        >
-          &#9664;
-        </button>
-        <div className="flex space-x-6 overflow-x-auto">
-          {visibleCompanies.map((company, index) => (
-            <div key={index} className="flex flex-col items-center space-y-2 min-w-[150px] border border-orange-400 rounded-xl p-6 hover:bg-slate-100">
-              <img src={company.logo} alt={company.name} className="w-24 h-24 object-contain" />
-              <p className="text-lg font-medium">{company.name}</p>
-              <a href="#" className="text-green-500 border border-black rounded-xl py-1 px-5 hover:bg-black hover:text-green-300">View Jobs</a>
-            </div>
-          ))}
+        {/* Company Cards */}
+        <div className="flex items-center justify-center space-x-8 overflow-hidden w-full px-16">
+          {companies
+            .slice(startIndex, startIndex + itemsToShow)
+            .map((company, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center space-y-4 w-[200px]"
+              >
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="w-32 h-32 object-contain"
+                />
+                <p className="text-lg font-semibold">{company.name}</p>
+                <a
+                  href="#"
+                  className="text-green-400 p-1 font-medium hover:border-b-2 hover:border-green-400 rounded-xl transition-all delay-100"
+                >
+                  View Jobs
+                </a>
+              </div>
+            ))}
         </div>
-        <button
-          className="text-xl p-2 rounded-full bg-gray-200 hover:bg-gray-300"
-          onClick={handleNext}
-        >
-          &#9654;
-        </button>
+
+        {/* Next Button */}
+        {startIndex + itemsToShow < companies.length && !isViewAll && (
+          <button
+            className="absolute right-4 text-3xl p-3 rounded-full bg-gray-200 hover:bg-gray-300 z-10"
+            onClick={handleNext}
+          >
+            &#8250;
+          </button>
+        )}
       </div>
 
-      <div className="text-center">
-        <button className="px-6 py-2 border rounded-full border border-black hover:bg-black hover:text-white">
-          View all Cities
+      {/* View All / Show Less Button */}
+      <div className="text-center mt-12">
+        <button
+          className="px-10 py-3 border rounded-full border-black hover:bg-black hover:text-white transition"
+          onClick={handleViewAllToggle}
+        >
+          {isViewAll ? "Show Less" : "View All Companies"}
         </button>
       </div>
     </div>
